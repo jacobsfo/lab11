@@ -37,7 +37,7 @@
 //Parameter: None
 //Returns: A keypad button press else '\0'
 unsigned char GetKeypadKey() {
-
+	KEYPADPORT = 0x00;
 	// Check keys in col 1
 	KEYPADPORT = SetBit(0xFF,COL1,0); // Set Px4 to 0; others 1
 	asm("nop"); // add a delay to allow PORTx to stabilize before checking
