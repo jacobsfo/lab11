@@ -21,8 +21,8 @@
 #include <bit.h>
 
 // Keypad Setup Values
-#define KEYPADPORT PORTA
-#define KEYPADPIN  PINA
+#define KEYPADPORT PORTC
+#define KEYPADPIN  PINC
 #define ROW1 0
 #define ROW2 1
 #define ROW3 2
@@ -37,7 +37,7 @@
 //Parameter: None
 //Returns: A keypad button press else '\0'
 unsigned char GetKeypadKey() {
-	
+
 	// Check keys in col 1
 	KEYPADPORT = SetBit(0xFF,COL1,0); // Set Px4 to 0; others 1
 	asm("nop"); // add a delay to allow PORTx to stabilize before checking
