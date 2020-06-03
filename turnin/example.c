@@ -41,9 +41,11 @@ case 'C' : PORTB = 0x0C;break;
 
 	case 'D' : PORTB = 0x0D;break;
 case '*' : PORTB = 0x0E;break;
+case '0' : PORTB = 0x00; break;
 case '#' : PORTB = 0x0F;break;
 default: PORTB = 0x1B;break;
     }
-    return 1;
+    //return 1;
 }
+return 1;
 }
