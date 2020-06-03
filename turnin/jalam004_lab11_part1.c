@@ -13,14 +13,7 @@
 #include "simAVRHeader.h"
 #endif
 #include "keypad.h"
-int main(void) {
-    /* Insert DDR and PORT initializations */
-unsigned char x;
-DDRB = 0xFF; PORTB = 0x00;
-DDRC= 0xF0; PORTC = 0x0F;
-    /* Insert your solution below */
-    while (1) {
-     x = GetKeypadKey();
+  /*x = GetKeypadKey();
 	switch(x)
 	{
 	case '\0' : PORTB = 0x1F;break;
@@ -44,8 +37,13 @@ case '*' : PORTB = 0x0E;break;
 case '0' : PORTB = 0x00; break;
 case '#' : PORTB = 0x0F;break;
 default: PORTB = 0x1B;break;
-    }
-    //return 1;
-}
-return 1;
+    }*/
+int main(void) {
+    /* Insert DDR and PORT initializations */
+unsigned char x;
+DDRB = 0xFF; PORTB = 0x00;
+DDRA = 0xF0; PORTA = 0x0F;
+    /* Insert your solution below */
+    while (1) {
+  
 }
