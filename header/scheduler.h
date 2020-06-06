@@ -31,7 +31,7 @@ typedef struct _task{
 	unsigned long elapsedTime; 	//Time elapsed since last task tick
 	int (*TickFct)(int); 		//Task tick function
 } task;
-task tasks[4];
+//task tasks[4];
 
-const unsigned char tasksNum = 4;
+//const unsigned char tasksNum = 4;
 #endif //SCHEDULER_H

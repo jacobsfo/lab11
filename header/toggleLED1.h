@@ -4,7 +4,7 @@ int Toggle_LED1(int state) {
 switch(state)
 	{
     case LED1_wait:
-	state = !pause ? blink: wait; break;
+	state = !pause ? blink: LED1_wait; break;
 	case blink:
 	state = pause ? LED1_wait: blink; break;
 
