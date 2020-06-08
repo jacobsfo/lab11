@@ -27,11 +27,9 @@ int LCD(int state)
 	{case start:
 	 break;
 	case sub:
-if(s)
- {
- 
 LCD_DisplayString(s,"Legend ...wait it for DARY!");
 s--; 
+
  	break;
 	case adj:
         break;
