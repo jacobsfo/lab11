@@ -32,6 +32,8 @@
 #define COL3 6
 #define COL4 7
 
+//#define GetBit(a,b)  ((a) &  (0x1 << (b)))
+
 ////////////////////////////////////////////////////////////////////////////////
 //Functionality - Gets input from a keypad via time-multiplexing
 //Parameter: None
