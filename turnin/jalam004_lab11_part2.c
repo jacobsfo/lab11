@@ -17,7 +17,7 @@ unsigned char led1_output = 0x00;
 #ifdef _SIMULATE_
 #include "simAVRHeader.h"
 #include "scheduler.h"
-#include "lcd.h"
+#include "LCD.h"
 #endif
 //#include "keypadsm.h"
 //#include "timer.h"
@@ -40,15 +40,14 @@ DDRD = 0xFF; PORTD = 0x00;
     	static task tasks1;
     	task *tasks[] = { &tasks1}; 
 	const unsigned short numTasks = sizeof(tasks)/sizeof(task*);
-	const char SMStart = -1;
+//	const char SMStart = -1;
 //PORTB = 0x01;
 //unsigned char i=0;
  // LCD_init();
-  tasks1.state = SMStart;
+  tasks1.state = start;
   tasks1.period = 1000;
   tasks1.elapsedTime = tasks1.period;
   tasks1.TickFct = &LCD;
-
 /*  
   tasks2.state = SMStart;
   tasks2.period = 500;
@@ -87,6 +86,6 @@ TimerFlag = 0;
 
 
 	}
-return 0;
+return 1;
 
 }

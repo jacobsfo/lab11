@@ -1,46 +1,47 @@
 #include "io.h"
 unsigned char s = 32;
 //const unsigned char * string = "CS120B is legendary";
-enum {start,sub,adj,pred};
+enum {start};
 int LCD(int state)
-{ LCD_init();
+{ // LCD_init();
 //PORTB =0x00;
 //LCD_ClearScreen();
 //LCD_DisplayString(s, "ddfdsfsdf");
 
 	switch(state)
 	{case start:
-	state = sub;
-	break;
-	case sub:
-	state = adj;
-	break;
-	case adj:
-	state = pred;
-	break;
-	case pred:
+	state = start;
 	break;
 	default: state = start; break;
 	}
 
 	switch(state)
 	{case start:
-	 break;
-	case sub:
-LCD_DisplayString(s,"Legend ...wait it for DARY!");
-s--; 
+ LCD_WriteCommand(0x38);
+ LCD_WriteCommand(0x06);
+LCD_WriteCommand(0x0f);
+LCD_WriteCommand(0x01);
 
- 	break;
-	case adj:
-        break;
-	case pred:
+if(s>1)
+{
+LCD_DisplayString(s, "Legend... wait for it DARY!");
+s--;
+}
+else{
+LCD_ClearScreen();
+s = 32;	
+}
+
+
+
 	break;
+	default: break;
 	}
+return state;
 
 }
 
 
-}
 
 
 
